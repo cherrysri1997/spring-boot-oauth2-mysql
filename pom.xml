@@ -8,11 +8,11 @@
 		<version>2.2.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.hcc.oauth2DZone</groupId>
-	<artifactId>oauth2DZone</artifactId>
+	<groupId>com.hcc.oAuth2WithMySql</groupId>
+	<artifactId>oAuth2WithMySql</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>oauth2DZone</name>
-	<description>Demo project for OAuth2 by DZone</description>
+	<name>oAuth2WithMySql</name>
+	<description>Demo project for OAuth2 with MySql</description>
 
 	<properties>
 		<java.version>1.8</java.version>

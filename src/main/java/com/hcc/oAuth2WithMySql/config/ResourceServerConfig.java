@@ -26,7 +26,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 			.requestMatchers()
 				.antMatchers("/api/admin")
 					.and()
-					.authorizeRequests().antMatchers("/api/admin").access("hasAuthority('ADMIN')");
+					.authorizeRequests().antMatchers("/api/admin").access("hasAuthority('ADMIN')")
+				.and()
+			.requestMatchers()
+				.antMatchers("/oauth2/revoke-token")
+					.and()
+					.authorizeRequests().antMatchers("/oauth2/revoke-token").hasAnyAuthority("USER", "ADMIN");
 		
 	}
 

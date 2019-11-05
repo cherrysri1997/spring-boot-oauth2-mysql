@@ -9,14 +9,13 @@ public class ReqController {
 	
 	@RequestMapping("/public")
 	public String getPublic() {
-		System.out.println("public api");
+//		System.out.println("public api");
 		return "its a public api";
 	}
 	
 	@RequestMapping("/private")
 	public String getPrivate() {
-		
-		System.out.println("private api");
+//		System.out.println("private api");
 		return "its a private api";
 	}
 	

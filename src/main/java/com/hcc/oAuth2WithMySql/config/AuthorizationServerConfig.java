@@ -40,7 +40,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 				.scopes("read", "write")
 				.autoApprove(true)
 				.secret(passwordEncoder().encode("password"))
-				.accessTokenValiditySeconds(10 * 60 * 60);
+				.accessTokenValiditySeconds(30)
+				.refreshTokenValiditySeconds(60);
 	}
 
 	@Bean
@@ -74,6 +75,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		DefaultTokenServices tokenServices = new DefaultTokenServices();
         tokenServices.setSupportRefreshToken(true);
         tokenServices.setTokenStore(this.tokenStore);
+        tokenServices.setSupportRefreshToken(true);
+//        tokenServices.setClientDetailsService(userDetailsService); @Autowired private CustomUserDetailsService userDetailsService;
+        tokenServices.setRefreshTokenValiditySeconds(Integer.MAX_VALUE);
         return tokenServices;
 	}
 	
